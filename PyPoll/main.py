@@ -42,8 +42,6 @@ with open(PyPollcsv) as csvfile:
 # Total number of votes each candidate wone
         for votes in num_votes:
             percentage = (votes/total_votes) * 100
-            percentage = round(percentage)
-            percentage = "%.3f%%" % percentage
             percent_votes.append(percentage)
 
 # Winner of election based on popular vote
@@ -75,7 +73,3 @@ with open(PyPollcsv) as csvfile:
         for i in range(len(candidates)):
             txt.write(f"{candidates[i]}: {str(percent_votes[i])} ({str(num_votes[i])})" + "\n")
         txt.write("Winner: " + str(winning_candidate) + "\n")
-
-
-
- 
